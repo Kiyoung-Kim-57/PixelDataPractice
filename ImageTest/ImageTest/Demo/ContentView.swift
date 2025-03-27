@@ -38,16 +38,6 @@ struct ContentView: View {
                 Spacer()
                     .frame(height: 50)
             }
-//            cropView
-//            VStack {
-//                Spacer()
-//                cropButton
-//            }
-//            
-//            if isCropped {
-//                Color.white.ignoresSafeArea()
-//                Image(uiImage: croppedImg ?? img)
-//            }
         }
     }
     
@@ -99,63 +89,4 @@ struct ContentView: View {
         }
 
     }
-
-    
-//    private var cropView: some View {
-//        cropBackground()
-//            .mask {
-//                Rectangle()
-//                    .overlay {
-//                        cropableArea
-//                    }
-//            }
-//            .compositingGroup()
-//            .ignoresSafeArea()
-//            .gesture(
-//                DragGesture()
-//                    .onChanged { value in
-//                        let newWidth = cropableSize.width - (value.translation.width / 25)
-//                        let newHeight = cropableSize.height - (value.translation.height / 25)
-//                        cropableSize.width = max(min(512, newWidth), 10)
-//                        cropableSize.height = max(min(512, newHeight), 10)
-//                        print("Drag",cropRange.debugDescription)
-//                    }
-//            )
-//    }
-    
-    private func cropBackground() -> some View {
-        Color.black
-            .opacity(0.5)
-    }
-//    
-//    private var cropableArea: some View {
-//        ZStack {
-//            Rectangle()
-//                .frame(width: cropableSize.width, height: cropableSize.height)
-//                .blendMode(.destinationOut)
-//                .overlay {
-//                    GeometryReader { geo in
-//                        VStack {
-//                            HStack {
-//                                Spacer()
-//                                Image(systemName: arrowName)
-//                                    .font(.system(size: 25))
-//                                    .onChange(of: geo.size) { newValue in
-//                                        cropRange = CGRect(x: geo.frame(in: .global).minX, y: geo.frame(in: .global).minY, width: newValue.width, height: newValue.height)
-//                                        
-//                                        print(cropRange.debugDescription)
-//                                    }
-//                            }
-//                            Spacer()
-//                        }
-//                    }
-//                }
-//        }
-//    }
-//    
-//    private var arrowName: String = "arrow.down.left.and.arrow.up.right"
-}
-
-#Preview {
-    ContentView()
 }
